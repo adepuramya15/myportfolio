@@ -7,7 +7,11 @@ const Navbar = () => {
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-[#0d1b2a]/70 backdrop-blur-2xl shadow-lg border-b border-[#1b263b]/60 z-50">
+    <nav className="fixed top-0 left-0 w-full bg-[linear-gradient(to_right,#5ff4ff,#fa7bfe)] backdrop-blur-2xl shadow-lg border-b border-[#1b263b]/60 z-50">
+    {/* <nav className="fixed top-0 left-0 w-full bg-[linear-gradient(to_right,#4b3f72,#6a5d97,#8d85b8)] backdrop-blur-xl shadow-lg border-b border-white/20 z-50"> */}
+  {/* <nav className="fixed top-0 left-0 w-full bg-[linear-gradient(to_right,#3a3456,#524a78,#746ca1)] backdrop-blur-xl shadow-lg border-b border-white/20 z-50"> */}
+{/* <nav className="fixed top-0 left-0 w-full bg-[linear-gradient(to_right,rgba(255,255,255,0.12),rgba(255,255,255,0.18))] backdrop-blur-2xl shadow-lg border-b border-white/30 z-50"> */}
+
       <div className="section-container flex items-center justify-between py-4">
 
         {/* Logo */}
