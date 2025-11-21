@@ -29,12 +29,12 @@ const Projects = () => {
           >
             <h3 className="text-xl font-semibold mb-4">{p.title}</h3>
             <p className="text-gray-700 mb-4">{p.summary}</p>
-            <ul className="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <ul className="list-disc list-inside space-y-2 mb-4 text-gray-600">
               {p.points.map((pt, i) => (
                 <li key={i}>{pt}</li>
               ))}
             </ul>
-            <p className="text-sm font-medium text-gray-400">
+            <p className="text-sm font-medium text-gray-600">
               <strong>Tech:</strong> {p.tech}
             </p>
           </div>

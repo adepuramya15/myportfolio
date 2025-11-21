@@ -1,19 +1,106 @@
-@tailwind base; 
-@tailwind components; 
-@tailwind utilities; 
-/* Smooth scrolling */ html { scroll-behavior: smooth; } /* Basic page background and text color */ 
-body {
-  @apply text-gray-100 font-sans;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
-/* Utility: subtle card */ 
-.card { @apply bg-white border border-gray-100 rounded-2xl p-6 shadow-lg; } 
-/* Utility: section container */ 
-.section-container { @apply w-full max-w-5xl mx-auto px-4; } 
-/* Headings for better hierarchy */ 
-h1,h2,h3 { @apply font-serif text-primary; } 
-/* Links with accent color and hover */ 
-a { @apply text-accent hover:text-primary; } 
-/* Buttons */ 
-.btn-primary { @apply bg-primary  px-5 py-2 rounded-lg shadow-md hover:bg-accent transition-colors duration-300;
+/* Page background + fade-in animation */
+body {
+  @apply bg-hero-gradient text-gray-100 font-sans;
+  animation: fadeIn 1s ease-in-out;
+}
+
+
+/* ----------------------------- */
+/*  ANIMATIONS                   */
+/* ----------------------------- */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes pulseSoft {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+/* ----------------------------- */
+/*  ELEMENTS WITH INTERACTIVITY  */
+/* ----------------------------- */
+
+/* Card with soft hover lift + shadow animation */
+.card {
+  @apply bg-white border border-gray-100 rounded-2xl p-6 shadow-lg transition-all duration-300;
+  transform: translateY(0);
+}
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  @apply shadow-2xl;
+}
+
+/* Section container */
+.section-container {
+  @apply w-full max-w-5xl mx-auto px-4;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Headings with subtle animation */
+h1, h2, h3 {
+  @apply font-serif text-primary transition-all duration-300;
+  animation: fadeIn 1s ease-in-out;
+}
+h1:hover, h2:hover, h3:hover {
+  letter-spacing: 1px;
+  transform: scale(1.02);
+}
+
+/* Links: underline grows + slight lift */
+a {
+  @apply text-accent relative transition-all duration-300;
+}
+a:hover {
+  @apply text-primary;
+  transform: translateY(-2px);
+}
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 0%;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+a:hover::after {
+  width: 100%;
+}
+
+/* Buttons with pop animation */
+.btn-primary {
+  @apply bg-primary text-white px-5 py-2 rounded-lg shadow-md transition-all duration-300;
+  transform: translateY(0);
+}
+.btn-primary:hover {
+  @apply bg-accent shadow-xl;
+  transform: scale(1.05) translateY(-2px);
+}
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+/* Soft floating animation for special elements (optional class) */
+.float {
+  animation: float 3s ease-in-out infinite;
 }

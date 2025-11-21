@@ -4,7 +4,7 @@ import { FiMail } from "react-icons/fi";
 const Home = () => {
     return (
         <section
-            id="home" className="min-h-screen flex items-center justify-center px-4"
+            id="home" className="min-h-screen flex items-center justify-center px-4 bg-background"
 
         >
             <div className="text-center max-w-xl mx-auto">
@@ -12,7 +12,7 @@ const Home = () => {
                     Hi, I'm <span className="text-accent">Ramya Adepu</span>
                 </h1>
 
-                <p className="mt-6 text-xl font-sans text-gray-100">
+                <p className="mt-6 text-xl font-sans text-pink-300">
                     Azure Cloud Developer
                 </p>
             </div>

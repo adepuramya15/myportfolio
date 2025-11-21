@@ -21,7 +21,7 @@ const Certifications = () => {
               className="bg-white bg-opacity-10 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer"
             >
               <h3 className="font-serif text-xl text-accent mb-2">{c.name}</h3>
-              <p className="text-sm text-gray-300">
+              <p className="text-sm text-gray-600">
                 {c.issuer} • <span className="italic">{c.year}</span>
               </p>
             </div>
