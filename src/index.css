@@ -9,10 +9,10 @@ html {
 
 /* Page background + fade-in animation */
 body {
-  @apply bg-hero-gradient text-gray-100 font-sans;
+  @apply text-gray-100 font-sans;
+  /* background: linear-gradient(to bottom, #F9A66C, #FFC94B, #F17A7E, #FFB26B); */
   animation: fadeIn 1s ease-in-out;
 }
-
 
 /* ----------------------------- */
 /*  ANIMATIONS                   */
