@@ -5,7 +5,125 @@
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
+
+/* Page background + fade-in animation */
+body {
+  @apply text-gray-100 font-sans;
+  background: linear-gradient(to bottom, #FCE7F3 ); 
+  animation: fadeInScale 1s ease-in-out;
+}
+
+/* ----------------------------- */
+/*  ANIMATIONS                   */
+/* ----------------------------- */
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: translateY(10px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes floatGlow {
+  0%, 100% {
+    transform: translate(0, 0);
+    box-shadow: 0 0 4px 0 rgba(241, 122, 126, 0.6);
+  }
+  25% {
+    transform: translate(6px, -6px);
+    box-shadow: 0 0 12px 4px rgba(249, 166, 108, 0.8);
+  }
+  50% {
+    transform: translate(0, -12px);
+    box-shadow: 0 0 18px 6px rgba(255, 194, 75, 1);
+  }
+  75% {
+    transform: translate(-6px, -6px);
+    box-shadow: 0 0 12px 4px rgba(249, 166, 108, 0.8);
+  }
+}
+
+@keyframes pulseSoft {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+/* ----------------------------- */
+/*  ELEMENTS WITH INTERACTIVITY  */
+/* ----------------------------- */
+
+/* Card with soft hover lift + shadow animation */
+.card {
+  @apply bg-white border border-gray-100 rounded-2xl p-6 shadow-lg transition-all duration-300;
+  transform: translateY(0);
+}
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  @apply shadow-2xl;
+}
+
+/* Section container */
+.section-container {
+  @apply w-full max-w-5xl mx-auto px-4;
+  animation: fadeInScale 1.2s ease-in-out;
+}
+
+/* Headings with subtle animation */
+h1, h2, h3 {
+  @apply font-serif text-primary transition-all duration-300;
+  animation: fadeInScale 1s ease-in-out;
+}
+h1:hover, h2:hover, h3:hover {
+  letter-spacing: 1px;
+  transform: scale(1.02);
+}
+
+/* Links: underline grows + slight lift */
+a {
+  @apply text-accent relative transition-all duration-300;
+}
+a:hover {
+  @apply text-primary;
+  transform: translateY(-2px);
+}
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 0%;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+a:hover::after {
+  width: 100%;
+}
+
+/* Buttons with pop animation */
+.btn-primary {
+  @apply bg-primary text-white px-5 py-2 rounded-lg shadow-md transition-all duration-300;
+  transform: translateY(0);
+}
+.btn-primary:hover {
+  @apply bg-accent shadow-xl;
+  transform: scale(1.05) translateY(-2px);
+}
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+/* Unique floating + glowing animation for special elements */
+.float {
+  animation: floatGlow 4s ease-in-out infinite;
+}
+
 
 /* Page background + fade-in animation */
 body {
